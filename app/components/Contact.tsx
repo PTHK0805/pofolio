@@ -13,7 +13,7 @@ export default function Contact() {
     >
       <h3 className="text-2xl font-semibold mb-4 text-sky-900">Contact</h3>
       <p className="mb-6 text-gray-700">
-        I'm always open to new opportunities and collaborations. Feel free to reach out to me through my LinkedIn profile or via email.
+        I&apos;m always open to new opportunities and collaborations. Feel free to reach out to me through my LinkedIn profile or via email.
       </p>
       <motion.a
         href="mailto:ptkyaw@gmail.com"

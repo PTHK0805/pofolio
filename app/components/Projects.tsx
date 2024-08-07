@@ -19,9 +19,9 @@ const projects = [
     description: "A robust task management application built with React frontend and Node.js backend. It offers features like task creation, assignment, priority setting, deadline tracking, and team collaboration tools to enhance productivity."
   },
   {
-    name: "MTM Evaluation Comment System",
+    name: "Evaluation Comment System",
     tech: "React, Python (Django)",
-    description: "An evaluation and commenting system for MTM (Methods-Time Measurement) using React for the frontend and Django for the backend. It allows for detailed time study analysis, performance evaluations, and collaborative commenting on work processes."
+    description: "An evaluation and commenting system using React for the frontend and Django for the backend. It allows for detailed time study analysis, performance evaluations, and collaborative commenting on work processes."
   },
   {
     name: "Task Management System (Salesforce)",
@@ -31,7 +31,7 @@ const projects = [
   {
     name: "HH/HE System",
     tech: "Salesforce",
-    description: "A specialized Salesforce application for managing HH (Household) and HE (Higher Education) data. It provides custom data models, automated processes for record management, and tailored reports for insights into household and educational metrics."
+    description: "A specialized Salesforce application for managing HH (Hearing Health) and HE (Human Error) data. It provides custom data models, automated processes for record management, and tailored reports for insights into household and educational metrics."
   }
 ]
 

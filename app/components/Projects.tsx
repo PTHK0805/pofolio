@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Card, CardContent, CardHeader, Typography, Grid } from '@mui/material'
 
 const projects = [
     {
@@ -47,25 +48,36 @@ export default function Projects() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: false }}
-            className="bg-white rounded-lg shadow-lg p-8 mb-12"
+            className="container mx-auto px-4 py-8 bg-white dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-800 transition-colors duration-300 rounded-lg shadow-lg mb-12"
         >
-            <h3 className="text-2xl font-semibold mb-6 text-sky-900">Projects</h3>
-            <div className="space-y-8">
+            <h3 className="text-2xl font-semibold mb-6 text-sky-900 dark:text-sky-200">Projects</h3>
+            <Grid container direction={"row"} spacing={4} alignItems={"stretch"}>
                 {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 * index, duration: 0.5 }}
-                        viewport={{ once: false }}
-                        className="border-b border-gray-200 pb-6 last:border-b-0"
-                    >
-                        <h4 className="text-xl font-semibold mb-2 text-blue-600">{project.name}</h4>
-                        <p className="text-sm text-sky-900 mb-2">Technologies: {project.tech}</p>
-                        <p className="text-gray-700">{project.description}</p>
-                    </motion.div>
+                    <Grid item xs={12} sm={6} md={4} key={index}>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 * index, duration: 0.5 }}
+                            viewport={{ once: false }}
+                        >
+                            <Card
+                                className="bg-gradient-to-b from-sky-100 to-cyan-100 dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
+                                elevation={3}
+                            >
+                                <CardHeader
+                                    title={<Typography variant="h6" component="div">{project.name}</Typography>}
+                                    subheader={<Typography variant="body2" className="text-sky-700 dark:text-sky-400">{project.tech}</Typography>}
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" className="text-gray-700 dark:text-gray-300">
+                                        {project.description}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </motion.div>
+                    </Grid>
                 ))}
-            </div>
+            </Grid>
         </motion.section>
     )
 }

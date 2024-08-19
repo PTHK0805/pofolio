@@ -1,61 +1,61 @@
 'use client'
-
+import { Tooltip } from "@mui/material"
 import { motion } from 'framer-motion'
 
 const skills = [
-  { name: "MongoDB", level: 80 },
-  { name: "Front-End Development", level: 85 },
-  { name: "PostgreSQL", level: 75 },
-  { name: "SQL", level: 70 },
-  { name: "Git", level: 80 },
-  { name: "Angular", level: 85 },
-  { name: "Node.js", level: 75 },
-  { name: "HTML5", level: 90 },
-  { name: "HTML", level: 90 },
-  { name: "Cascading Style Sheets (CSS)", level: 80 },
-  { name: "React.js", level: 75 },
-  { name: "JavaScript", level: 85 },
-  { name: "Python (Programming Language)", level: 70 },
-  { name: "Salesforce", level: 65 },
-  { name: "Strapi", level: 70 },
+    { name: "Angular", icon: "./angular.png" },
+    { name: "Bootstrap", icon: "./bootstrap.png" },
+    { name: "Cascading Style Sheets (CSS)", icon: "./css.png" },
+    { name: "Git", icon: "./git.png" },
+    { name: "GitHub", icon: "./github.png" },
+    { name: "GitLab", icon: "./gitlab.png" },
+    { name: "HTML", icon: "./html.png" },
+    { name: "Tailwind", icon: "./tailwind.png" },
+    { name: "Java", icon: "./java.png" },
+    { name: "Spring Boot", icon: "./springboot.png" },
+    { name: "MongoDB", icon: "./mongo-db.png" },
+    { name: "Strapi", icon: "./strapi.png" },
+    { name: "Node.js", icon: "./nodejs.png" },
+    { name: "Javascript", icon: "./javascript.png" },
+    { name: "Typescript", icon: "./typescript.png" },
+    { name: "MySql", icon: "./mysql.png" },
+    { name: "PostgreSQL", icon: "./postgres.png" },
+    { name: "React.js", icon: "./react.png" },
+    { name: "Next.js", icon: "./nextjs.png" },
+    { name: "Python", icon: "./python.png" },
+    { name: "Salesforce", icon: "./salesforce.png" },
 ]
 
 export default function Skills() {
-  return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: false }}
-      className="bg-white rounded-lg shadow-lg p-8 mb-12"
-    >
-      <h3 className="text-2xl font-semibold mb-6 text-purple-800">Skills</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {skills.map((skill, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
+    return (
+        <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: false }}
-            className="mb-2"
-          >
-            <div className="flex justify-between mb-1">
-              <span className="text-sky-900 font-medium">{skill.name}</span>
-              <span className="text-sky-900 font-medium">{skill.level}%</span>
+            className="bg-white rounded-xl shadow-xl p-10 mb-14 dark:bg-gray-800 dark:text-white"
+        >
+            <h3 className="text-3xl font-bold mb-8 text-purple-700 dark:text-purple-300">Skills</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {skills.map((skill, index) => (
+                    <motion.div
+                        key={index}
+                        className="flex items-center justify-center"
+                        initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 * index }}
+                        viewport={{ once: false }}
+                    >
+                        <Tooltip title={skill.name} placement="top">
+                            <motion.img
+                                src={skill.icon}
+                                alt={skill.name}
+                                className="w-14 h-14 object-contain transform transition-transform duration-300 hover:scale-110"
+                            />
+                        </Tooltip>
+                    </motion.div>
+                ))}
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
-              <motion.div
-                className="bg-gradient-to-r from-sky-500 to-cyan-500 h-2.5 rounded-full"
-                initial={{ width: 0 }}
-                whileInView={{ width: `${skill.level}%` }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: false }}
-              ></motion.div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </motion.section>
-  )
+        </motion.section>
+    )
 }

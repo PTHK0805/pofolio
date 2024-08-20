@@ -20,6 +20,7 @@ export default function AboutMe() {
         <Image
           src="/profile-pic.jpg"
           alt="Profile Picture"
+          priority={true}
           width={200}
           height={200}
           className="rounded-full mx-auto mb-4 border-4 border-x-cyan-100 dark:border-gray-700"

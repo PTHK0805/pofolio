@@ -12,10 +12,7 @@ const Navbar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [prevScroll, setPrevScroll] = useState(0);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    const localTheme = localStorage && localStorage.getItem('theme');
-    return (localTheme || 'light') as 'light';
-  });
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [isLoading, setIsLoading] = useState(true);
 
   function update(latest: number, prev: number): void {

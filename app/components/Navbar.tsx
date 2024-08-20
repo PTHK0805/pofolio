@@ -13,7 +13,7 @@ const Navbar: FC = () => {
   const [hidden, setHidden] = useState(false);
   const [prevScroll, setPrevScroll] = useState(0);
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    const localTheme = localStorage.getItem('theme');
+    const localTheme = localStorage && localStorage.getItem('theme');
     return (localTheme || 'light') as 'light';
   });
   const [isLoading, setIsLoading] = useState(true);

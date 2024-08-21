@@ -61,7 +61,7 @@ const Navbar: FC = () => {
           hidden ? {opacity: 0, y: -20} : {opacity: 1, y: 0}
         }
         transition={{duration: 0.3, ease: 'easeOut'}}
-        className={`fixed w-full z-10 transition-colors duration-300 ${
+        className={`fixed w-full z-10 ${
           theme === 'light' ? 'border-b border-gray-300 bg-transparent backdrop-blur-lg' : 'bg-gray-800 border-b border-gray-700 bg-transparent backdrop-blur-lg'
         }`}
       >

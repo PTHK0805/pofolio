@@ -1,7 +1,6 @@
 'use client';
-import {FC, useState, useEffect} from 'react';
+import React, {FC, useState, useEffect} from 'react';
 import {motion, AnimatePresence, useScroll, useMotionValueEvent} from 'framer-motion';
-import {FaSun, FaMoon} from 'react-icons/fa';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Logo from './Logo';
@@ -30,6 +29,7 @@ const Navbar: FC = () => {
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
+    localStorage.getItem('theme') ? setTheme(localStorage.getItem('theme') as 'light' | 'dark') : setTheme('dark');
     setIsLoading(false);
   }, [theme]);
 
@@ -44,7 +44,7 @@ const Navbar: FC = () => {
   };
 
   const handleScroll = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation(); // Ensure event propagation
+    e.stopPropagation();
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({behavior: 'smooth'});

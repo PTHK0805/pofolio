@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { motion } from 'framer-motion';
+import {FC} from 'react';
+import {motion} from 'framer-motion';
 
 interface LogoProps {
   theme: 'light' | 'dark';
@@ -25,53 +25,28 @@ const pathAnimation = {
   }
 };
 
-const Logo: FC<LogoProps> = ({ theme }) => {
-  const fillColor = theme === 'light' ? '#2D2D2D' : '#E0E0E0';
-  const gradientId = theme === 'light' ? 'light-gradient' : 'dark-gradient';
+const Logo: FC<LogoProps> = ({theme}) => {
+  const fill = {
+    circle: theme === 'light' ? '#262121' : '#e5e7eb',
+    text: theme === 'light' ? '#e5e7eb' : '#262121',
+  }
 
   return (
     <motion.svg
-      width="45"
-      height="76"
-      viewBox="0 0 99 76"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      whileHover={{ scale: 1.05 }}
-    >
-      <defs>
-        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={theme === 'light' ? '#4A90E2' : '#1D3557'} />
-          <stop offset="100%" stopColor={theme === 'light' ? '#D4E157' : '#457B9D'} />
-
-        </linearGradient>
-      </defs>
-      <motion.path
-        d="M0 75.6364V0H26.9602C32.8447 0 37.7197 1.07102 41.5852 3.21307C45.4508 5.35511 48.3437 8.28504 50.2642 12.0028C52.1847 15.696 53.1449 19.857 53.1449 24.4858C53.1449 29.1392 52.1723 33.3248 50.2273 37.0426C48.3068 40.7358 45.4015 43.6657 41.5114 45.8324C37.6458 47.9744 32.7831 49.0455 26.9233 49.0455H11.4119V39.3693H25.8892C29.607 39.3693 32.6231 38.7292 34.9375 37.4489C37.2519 36.1439 38.9508 34.3712 40.0341 32.1307C41.1174 29.8902 41.6591 27.3419 41.6591 24.4858C41.6591 21.6297 41.1174 19.0938 40.0341 16.8778C38.9508 14.6619 37.2396 12.9261 34.9006 11.6705C32.5862 10.4148 29.5331 9.78693 25.7415 9.78693H11.4119V43.6364V75.6364H0Z"
-        fill={`url(#${gradientId})`}
-        variants={pathAnimation}
-        initial="hidden"
-        animate="visible"
-        whileHover="hover" // Apply hover animation
-      />
-      <motion.path
-        d="M43.6818 75.6364V0.136414H54.3256V38.7792H55.1868L85.4649 0.136414H98.2788L69.723 36.8502L98.2788 75.6364H85.4649L62.6616 44.1183L54.3256 53.6943V75.6364H43.6818Z"
-        fill={`url(#${gradientId})`}
-        variants={pathAnimation}
-        initial="hidden"
-        animate="visible"
-        whileHover="hover"
-      />
-      <motion.path
-        d="M19.1449 9.82393V6.10352e-05H77.6818V9.82393H54.0824V75.6364H42.7074V9.82393H19.1449Z"
-        fill={fillColor}
-        variants={pathAnimation}
-        initial="hidden"
-        animate="visible"
-        whileHover="hover"
-      />
+      width="40"
+      height="40"
+      viewBox="0 0 136 136"
+      fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="68" cy="68" r="68" fill={fill.circle}/>
+      <path
+        d="M25 104.001V31H48.8662C54.0753 31 58.3909 32.0337 61.8128 34.1011C65.2347 36.1685 67.7957 38.9964 69.4957 42.5846C71.1958 46.1491 72.0458 50.1651 72.0458 54.6327C72.0458 59.1239 71.1849 63.1637 69.463 66.752C67.763 70.3165 65.1911 73.1443 61.7474 75.2355C58.3255 77.3029 54.0208 78.3366 48.8335 78.3366H35.1023V68.9976H47.9181C51.2092 68.9976 53.8792 68.3798 55.928 67.1441C57.9768 65.8846 59.4806 64.1736 60.4397 62.0112C61.3987 59.8487 61.8782 57.3892 61.8782 54.6327C61.8782 51.8761 61.3987 49.4285 60.4397 47.2898C59.4806 45.1511 57.9659 43.4758 55.8953 42.2638C53.8465 41.0519 51.1438 40.4459 47.7873 40.4459H35.1023V73.116V104.001H25Z"
+        fill={fill.text}/>
+      <path
+        d="M63.6688 104.001V31.1317H73.0911V68.428H73.8534L100.657 31.1317H112L86.7214 66.5662L112 104.001H100.657L80.4703 73.5811L73.0911 82.8235V104.001H63.6688Z"
+        fill={fill.text}/>
+      <path
+        d="M41.9478 40.4816V31.0001H93.7668V40.4816H72.8757V104.001H62.8062V40.4816H41.9478Z"
+        fill={fill.text}/>
     </motion.svg>
   );
 };

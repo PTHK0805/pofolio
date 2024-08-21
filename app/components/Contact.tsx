@@ -8,7 +8,8 @@ export default function Contact() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      viewport={{ once: false }}
+          viewport={{ once: false }}
+          
       className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 transition"
     >
       <h3 className="text-2xl font-semibold mb-4 text-sky-900 dark:text-sky-200">Contact</h3>

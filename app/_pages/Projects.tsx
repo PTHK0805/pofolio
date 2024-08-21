@@ -48,7 +48,7 @@ export default function Projects() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: false }}
-            className="mx-auto px-4 py-8 bg-white dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-800 transition-colors duration-300 rounded-lg shadow-lg mb-12"
+            className="bg-gradient-to-r from-gray-50 to-gray-200 mx-auto px-4 py-8 dark:bg-gray-800 transition-colors duration-300 rounded-lg shadow-lg mb-12 bg-dots"
         >
             <h3 className="text-2xl font-semibold mb-6 text-sky-900 dark:text-sky-200">Projects</h3>
             <Grid container direction={"row"} spacing={4} alignItems={"stretch"}>

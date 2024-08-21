@@ -9,7 +9,7 @@ export default function AboutMe() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: false, amount: 0.5 }}
-      className="flex flex-col md:flex-row items-center md:items-start mb-12 bg-gradient-to-r from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-lg p-10"
+      className="flex flex-col md:flex-row items-center md:items-start mb-12 bg-gradient-to-r from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-lg p-10 bg-dots"
     >
       <motion.div
         initial={{ scale: 0.95 }}

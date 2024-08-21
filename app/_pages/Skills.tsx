@@ -3,6 +3,7 @@
 import { FC, useMemo } from 'react'
 import { Tooltip } from "@mui/material"
 import { motion } from 'framer-motion'
+import theme from "tailwindcss/defaultTheme";
 
 const skills = [
     { name: "Angular", icon: "./skills/angular.png" },
@@ -37,13 +38,13 @@ const Skills: FC = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: false }}
-        className="bg-white rounded-xl shadow-xl p-10 mb-14 dark:bg-gray-800 dark:text-white"
+        className="bg-gradient-to-r from-gray-50 to-gray-200 rounded-xl shadow-xl p-10 mb-14 dark:bg-gray-800 dark:text-white bg-dots"
       >
           <h3 className="text-3xl font-semibold mb-6 text-sky-900 dark:text-sky-200">Skills</h3>
           <div className="relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 bottom-0 z-10 pointer-events-none">
-                  <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent dark:from-gray-800"></div>
-                  <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent dark:from-gray-800"></div>
+              <div className="absolute top-0 left-0 right-0 bottom-0 z-[1] pointer-events-none">
+                  <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent dark:from-gray-800"></div>
+                  <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-200 to-transparent dark:from-gray-800"></div>
               </div>
               <motion.div
                 className="flex gap-8"
@@ -52,17 +53,18 @@ const Skills: FC = () => {
                     x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 30,
+                        duration: 40,
                         ease: "linear",
-                    },
+                    }
                 }}
+                whileHover={{animation: "none" }}
                 style={{ width: `${skillsMemo.length * 12}rem` }}
               >
                   {skillsMemo.map((skill, index) => (
                     <motion.div
                       key={index}
                       className="flex items-center justify-center"
-                      style={{ width: "12rem" }}
+                      style={{ width: "12rem"}}
                     >
                         <Tooltip title={skill.name} placement="top">
                             <motion.img

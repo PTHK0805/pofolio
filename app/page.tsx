@@ -1,9 +1,9 @@
-import AboutMe from '@/app/components/AboutMe';
-import Skills from '@/app/components/Skills';
-import Projects from '@/app/components/Projects';
-import Contact from '@/app/components/Contact';
-import Footer from '@/app/components/Footer';
-import Navbar from '@/app/components/Navbar';
+import AboutMe from '@/app/_pages/AboutMe';
+import Skills from '@/app/_pages/Skills';
+import Projects from '@/app/_pages/Projects';
+import Contact from '@/app/_pages/Contact';
+import Footer from '@/app/_pages/Footer';
+import Navbar from '@/app/_components/Navbar';
 
 export default function Home() {
   return (

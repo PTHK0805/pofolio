@@ -10,7 +10,7 @@ export default function Contact() {
       transition={{ duration: 0.5 }}
           viewport={{ once: false }}
           
-      className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 transition"
+      className="bg-gradient-to-r from-gray-50 to-gray-200 bg-dots dark:bg-gray-900 rounded-lg shadow-lg p-8 transition"
     >
       <h3 className="text-2xl font-semibold mb-4 text-sky-900 dark:text-sky-200">Contact</h3>
       <p className="mb-6 text-gray-700 dark:text-gray-300">

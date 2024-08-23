@@ -85,7 +85,7 @@ const Navbar: FC = () => {
           <div className="flex-shrink-0">
             <Logo theme={theme} />
           </div>
-          <div className="hidden md:flex space-x-4 text-xl">
+          <div className="hidden md:flex space-x-4">
             <a
               onClick={(e) => handleScroll('about', e)}
               className={`cursor-pointer transition duration-300 ${

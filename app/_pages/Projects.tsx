@@ -48,9 +48,9 @@ export default function Projects() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: false }}
-            className="bg-gradient-to-r from-gray-50 to-gray-200 mx-auto px-4 py-8 dark:bg-gray-800 transition-colors duration-300 rounded-lg shadow-lg mb-12 bg-dots"
+            className="bg-gradient-to-r from-gray-50 to-gray-200 mx-auto p-8 dark:bg-gray-800 transition-colors duration-300 rounded-lg shadow-lg mb-12 bg-dots"
         >
-            <h3 className="text-2xl font-semibold mb-6 text-sky-900 dark:text-sky-200">Projects</h3>
+            <h3 className="text-4xl font-semibold mb-6 text-sky-900 dark:text-sky-200">Projects</h3>
             <Grid container direction={"row"} spacing={4} alignItems={"stretch"}>
                 {projects.map((project, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>
@@ -61,15 +61,15 @@ export default function Projects() {
                             viewport={{ once: false }}
                         >
                             <Card
-                                className="bg-gradient-to-b from-sky-100 to-cyan-100 dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
+                                className="p-4 bg-gradient-to-b from-sky-100 to-cyan-100 dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
                                 elevation={3}
                             >
                                 <CardHeader
-                                    title={<Typography variant="h6" component="div">{project.name}</Typography>}
-                                    subheader={<Typography variant="body2" className="text-sky-700 dark:text-sky-400">{project.tech}</Typography>}
+                                    title={<Typography variant="h5" component="div">{project.name}</Typography>}
+                                    subheader={<Typography variant="body1" className="text-sky-700 dark:text-sky-400">{project.tech}</Typography>}
                                 />
                                 <CardContent>
-                                    <Typography variant="body2" className="text-gray-700 dark:text-gray-300">
+                                    <Typography variant="body1" className="text-gray-700 dark:text-gray-300 text-lg">
                                         {project.description}
                                     </Typography>
                                 </CardContent>

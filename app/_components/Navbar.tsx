@@ -17,7 +17,7 @@ const Navbar: FC = () => {
   function update(latest: number, prev: number): void {
     if (latest < prev) {
       setHidden(false);
-    } else if (latest > 10 && latest > prev) {
+    } else if (latest > 30 && latest > prev) {
       setHidden(true);
     }
   }
@@ -85,7 +85,7 @@ const Navbar: FC = () => {
           <div className="flex-shrink-0">
             <Logo theme={theme} />
           </div>
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-4 text-xl">
             <a
               onClick={(e) => handleScroll('about', e)}
               className={`cursor-pointer transition duration-300 ${

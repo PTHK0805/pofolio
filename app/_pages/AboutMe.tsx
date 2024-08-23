@@ -23,7 +23,7 @@ export default function AboutMe() {
       <ProfileImage />
       <div className="flex-1 md:ml-12">
         <span className="text-lg font-light tracking-wide text-gray-700 dark:text-sky-200">
-          Hi, I'm
+          Hi&#44; I&apos;m
         </span>
         <motion.h1
           initial={{y: 20, opacity: 0}}

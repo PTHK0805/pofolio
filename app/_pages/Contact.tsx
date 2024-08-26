@@ -16,7 +16,7 @@ export default function Contact() {
     <section className="p-8 bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-700 dark:to-gray-800">
       <h3 className="text-3xl font-extrabold mb-6 text-gray-900 dark:text-gray-50">Get in Touch</h3>
       <p className="mb-8 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-        I'm always eager to connect with like-minded professionals and explore new opportunities. Whether you want to discuss a potential project or just say hello, feel free to reach out through any of the platforms below.
+        I&apos;m always eager to connect with like-minded professionals and explore new opportunities. Whether you want to discuss a potential project or just say hello, feel free to reach out through any of the platforms below.
       </p>
       <div className="flex justify-center space-x-8">
         {contactLinks.map(({ icon: Icon, link }, index) => (

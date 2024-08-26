@@ -59,6 +59,10 @@ const Logo: FC<LogoProps> = ({ theme }) => {
       xmlns="http://www.w3.org/2000/svg"
       variants={svgVariants}
       whileHover="hover"
+      onClick={() => {
+        setAnimationKey(prev => prev + 1);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }}
     >
       <motion.circle
         cx="68"

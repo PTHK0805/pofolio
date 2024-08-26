@@ -1,5 +1,5 @@
 import {motion} from "framer-motion";
-import {cn} from "@/utils/tailWindMerge";
+import {cn} from "@/utils/utilFuns";
 
 const cursorVariants = {
   blinking: {

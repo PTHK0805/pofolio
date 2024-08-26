@@ -1,31 +1,39 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { FaLinkedin, FaGithub, FaFacebook } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
+
+const contactLinks = [
+  { icon: FaLinkedin, link: "https://www.linkedin.com/in/phyo-thiha-kyaw-849453177/" },
+  { icon: FaGithub, link: "https://github.com/PTHK0805" },
+  { icon: SiGmail, link: "mailto:ptkyaw505@gmail.com" },
+  { icon: FaFacebook, link: "https://www.facebook.com/profile.php?id=100008839742201&mibextid=ZbWKwL" }
+];
 
 export default function Contact() {
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-          
-      className="bg-gradient-to-r from-gray-50 to-gray-200 bg-dots dark:bg-gray-900 rounded-lg shadow-lg p-8 transition"
-    >
-      <h3 className="text-2xl font-semibold mb-4 text-sky-900 dark:text-sky-200">Contact</h3>
-      <p className="mb-6 text-gray-700 dark:text-gray-300">
-        I&apos;m always open to new opportunities and collaborations. Feel free to reach out to me through my LinkedIn profile or via email.
+    <section className="p-8 bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-700 dark:to-gray-800">
+      <h3 className="text-3xl font-extrabold mb-6 text-gray-900 dark:text-gray-50">Get in Touch</h3>
+      <p className="mb-8 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        I'm always eager to connect with like-minded professionals and explore new opportunities. Whether you want to discuss a potential project or just say hello, feel free to reach out through any of the platforms below.
       </p>
-      <motion.a
-        href="mailto:ptkyaw@gmail.com"
-        className="bg-gradient-to-r from-sky-600 to-blue-500 dark:from-blue-700 dark:to-sky-500 text-white px-6 py-2 rounded-full hover:from-sky-700 hover:to-blue-600 dark:hover:from-sky-600 dark:hover:to-blue-500 transition duration-300 inline-block"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        viewport={{ once: false }}
-      >
-        Contact Me
-      </motion.a>
-    </motion.section>
-  )
+      <div className="flex justify-center space-x-8">
+        {contactLinks.map(({ icon: Icon, link }, index) => (
+          <motion.a
+            key={link}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full p-4 bg-white dark:bg-gray-600 shadow-lg hover:shadow-xl"
+            initial={{ scale: 1, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+          >
+            <Icon className="text-4xl text-gray-900 dark:text-gray-50" />
+          </motion.a>
+        ))}
+      </div>
+    </section>
+  );
 }

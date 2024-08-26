@@ -1,13 +1,15 @@
 'use client';
-import React, { FC, useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import React, {FC, useState, useEffect} from 'react';
+import {motion, AnimatePresence, useScroll, useMotionValueEvent} from 'framer-motion';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Logo from './Logo';
 import ThemeToggle from "@/app/_components/ThemeToggle";
+import {handleScroll} from "@/utils/utilFuns";
+import Link from "next/link";
 
 const Navbar: FC = () => {
-  const { scrollY } = useScroll();
+  const {scrollY} = useScroll();
   const [isOpen, setIsOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [prevScroll, setPrevScroll] = useState(0);
@@ -43,15 +45,6 @@ const Navbar: FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleScroll = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false);
-  };
-
   return (
     <motion.nav
       initial={{
@@ -75,7 +68,7 @@ const Navbar: FC = () => {
             scale: 1,
           }
       }
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{duration: 0.5, ease: 'easeOut'}}
       className={`fixed top-2.5 border rounded-lg drop-shadow-xl z-10 ${
         theme === 'light' ? 'border-gray-300 bg-transparent backdrop-blur-lg' : 'bg-gray-800 border-gray-700 bg-transparent backdrop-blur-lg'
       }`}
@@ -83,11 +76,12 @@ const Navbar: FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 drop-shadow-xl">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Logo theme={theme} />
+            <Logo theme={theme}/>
           </div>
           <div className="hidden md:flex space-x-4">
             <a
-              onClick={(e) => handleScroll('about', e)}
+              // href="#about"
+              onClick={(e) => handleScroll('about', e, setIsOpen)}
               className={`cursor-pointer transition duration-300 ${
                 theme === 'light' ? 'text-gray-800 hover:text-blue-600' : 'text-gray-200 hover:text-blue-400'
               }`}
@@ -95,7 +89,8 @@ const Navbar: FC = () => {
               About
             </a>
             <a
-              onClick={(e) => handleScroll('skills', e)}
+              // href="#skills"
+              onClick={(e) => handleScroll('skills', e, setIsOpen)}
               className={`cursor-pointer transition duration-300 ${
                 theme === 'light' ? 'text-gray-800 hover:text-blue-600' : 'text-gray-200 hover:text-blue-400'
               }`}
@@ -103,7 +98,8 @@ const Navbar: FC = () => {
               Skills
             </a>
             <a
-              onClick={(e) => handleScroll('projects', e)}
+              // href="#projects"
+              onClick={(e) => handleScroll('projects', e, setIsOpen)}
               className={`cursor-pointer transition duration-300 ${
                 theme === 'light' ? 'text-gray-800 hover:text-blue-600' : 'text-gray-200 hover:text-blue-400'
               }`}
@@ -111,7 +107,8 @@ const Navbar: FC = () => {
               Projects
             </a>
             <a
-              onClick={(e) => handleScroll('contact', e)}
+              // href="#contact"
+              onClick={(e) => handleScroll('contact', e, setIsOpen)}
               className={`cursor-pointer transition duration-300 ${
                 theme === 'light' ? 'text-gray-800 hover:text-blue-600' : 'text-gray-200 hover:text-blue-400'
               }`}
@@ -120,9 +117,10 @@ const Navbar: FC = () => {
             </a>
           </div>
           <div className="flex items-center">
-            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme}/>
             <button onClick={handleMenuToggle} className="md:hidden ml-2 p-2 rounded-full focus:outline-none">
-              {isOpen ? <CloseIcon className="text-gray-800 dark:text-gray-200" /> : <MenuIcon className="text-gray-800 dark:text-gray-200" />}
+              {isOpen ? <CloseIcon className="text-gray-800 dark:text-gray-200"/> :
+                <MenuIcon className="text-gray-800 dark:text-gray-200"/>}
             </button>
           </div>
         </div>
@@ -130,27 +128,47 @@ const Navbar: FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0, y: 20 }}
-            animate={{ opacity: 1, height: 'auto', y: 0 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
-            exit={{ opacity: 0, height: 0, y: 20 }}
+            initial={{opacity: 0, height: 0, y: 20}}
+            animate={{opacity: 1, height: 'auto', y: 0}}
+            transition={{duration: 0.3, ease: 'easeOut'}}
+            exit={{opacity: 0, height: 0, y: 20}}
             className="md:hidden overflow-hidden"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {['about', 'skills', 'projects', 'contact'].map((item, index) => (
-                <motion.a
+                <motion.li
                   key={item}
-                  href={`#${item}`}
-                  onClick={(e) => handleScroll(item, e)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer transition duration-300 ${
-                    theme === 'light' ? 'text-gray-800 hover:text-blue-600' : 'text-gray-200 hover:text-blue-400'
-                  }`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.3 }}
+                  initial={{opacity: 0, y: 20}}
+                  animate={{opacity: 1, y: 0}}
+                  transition={{delay: index * 0.1, duration: 0.3}}
+                  className="block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </motion.a>
+                  <Link
+                    href={`#${item}`}
+                    onClick={() => {
+                      setIsOpen(false);
+                    }}
+                    className={`cursor-pointer transition duration-300 ${
+                      theme === 'light' ? 'text-gray-800 hover:text-blue-600' : 'text-gray-200 hover:text-blue-400'
+                    }`}>
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                  </Link>
+                </motion.li>
+                // <motion.a
+                //   key={item}
+                //   href={`#${item}`}
+                //   onClick={(e) => {
+                //     handleScroll(item, e, setIsOpen);
+                //   }}
+                //   className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer transition duration-300 ${
+                //     theme === 'light' ? 'text-gray-800 hover:text-blue-600' : 'text-gray-200 hover:text-blue-400'
+                //   }`}
+                //   initial={{ opacity: 0, y: 20 }}
+                //   animate={{ opacity: 1, y: 0 }}
+                //   transition={{ delay: index * 0.1, duration: 0.3 }}
+                // >
+                //   {item.charAt(0).toUpperCase() + item.slice(1)}
+                // </motion.a>
               ))}
             </div>
           </motion.div>

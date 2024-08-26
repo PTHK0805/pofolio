@@ -1,6 +1,6 @@
 import {animate, motion, useMotionValue, useTransform} from "framer-motion";
 import {useEffect} from "react";
-import {cn} from "@/utils/tailWindMerge";
+import {cn} from "@/utils/utilFuns";
 
 export interface IRedoAnimTextProps {
   delay: number;

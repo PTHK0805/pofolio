@@ -6,8 +6,8 @@ import {motion} from "framer-motion";
 const ProfileImage: FC = () => {
   return (
     <motion.div
-      initial={{scale: 0.95}}
-      whileInView={{scale: 1}}
+      initial={{scale: 0.95, opacity: 0}}
+      whileInView={{scale: 1, opacity: 1}}
       transition={{duration: 0.8, ease: "easeOut"}}
       viewport={{once: false, amount: 0.5}}
       className="mx-auto mb-8 relative w-[80%] h-auto aspect-square md:max-w-[50%] md:mb-0 md:mr-10"

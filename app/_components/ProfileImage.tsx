@@ -1486,7 +1486,7 @@ c19 19 34 40 34 48 0 41 -57 66 -114 48z"/>
       </svg>
 
       <Image
-        src="/profile-pic.png"
+        src="/profile-pic.webp"
         alt="Profile Picture"
         priority={true}
         width={470}

@@ -56,7 +56,7 @@ export const projects = [
   {
     name: "Task Management System (Salesforce)",
     tech: ["Salesforce"],
-    description: "A Salesforce-based task management solution leveraging the platform's powerful features. It includes custom objects for tasks, automated workflows, reports and dashboards for task tracking, and integration with Salesforce's native collaboration tools."
+    description: "A Salesforce-based task management solution leveraging the platform&apos;s powerful features. It includes custom objects for tasks, automated workflows, reports and dashboards for task tracking, and integration with Salesforce&apos;s native collaboration tools."
   },
   {
     name: "HH/HE System",

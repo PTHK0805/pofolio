@@ -5,9 +5,18 @@ import React from "react";
 
 const inter = Plus_Jakarta_Sans({subsets: ['latin'], weight: ["200", "300", "400", "500", "600", "700", "800"]})
 
-  export const metadata = {
-  title: 'Phyo Thiha Kyaw - Full-Stack Developer',
-  description: 'Portfolio of Phyo Thiha Kyaw, a Full-Stack Developer',
+export const metadata = {
+  title: 'Phyo Thiha Kyaw - Web Developer',
+  description: 'Portfolio of Phyo Thiha Kyaw, Web Developer',
+  metadataBase: new URL('https://phyothihakyaw.com'),
+  openGraph: {
+    title: 'Phyo Thiha Kyaw - Web Developer',
+    description: 'Portfolio of Phyo Thiha Kyaw, Web Developer',
+    type: 'website',
+    url: 'https://phyothihakyaw.com',
+    images: '/home.png',
+    siteName: 'Phyo Thiha Kyaw - Web Developer',
+  }
 }
 
 export default function RootLayout({

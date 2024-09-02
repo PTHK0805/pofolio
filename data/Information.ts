@@ -2,7 +2,7 @@ import {FaFacebook, FaGithub, FaLinkedin} from "react-icons/fa";
 import {SiGmail} from "react-icons/si";
 
 export const contactLinks = [
-  {name: "LinkedIn", icon: FaLinkedin, link: "https://www.linkedin.com/in/phyo-thiha-kyaw-849453177/"},
+  {name: "LinkedIn", icon: FaLinkedin, link: "https://www.linkedin.com/in/phyothihakyaw0805/"},
   {name: "Github", icon: FaGithub, link: "https://github.com/PTHK0805"},
   {name: "Gmail", icon: SiGmail, link: "mailto:ptkyaw505@gmail.com"},
   {name: "Facebook", icon: FaFacebook, link: "https://www.facebook.com/profile.php?id=100008839742201&mibextid=ZbWKwL"}
